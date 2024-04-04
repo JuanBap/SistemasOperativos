@@ -20,4 +20,4 @@
 - posix y pthreads 🧵🚀
 ---
 
-#### Última actualización: 1/04/2024 por Juan Pablo Cañón 🔝
+#### Última actualización: 04/04/2024 por Juan Pablo Cañón 🔝
