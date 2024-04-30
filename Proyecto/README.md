@@ -1,23 +1,8 @@
-## 🟢 Juan Pablo Cañón Contreras 🥇
- ---
-
-# ⭐️ Repositorio ⭐ Sistemas operativos 2024 -1 🤖️
-
->En este repositorio se encontrarán diversos ejercicios correspondientes a 
->el lenguaje de programación C y Java. Dichos ejercicios evidencian los  
->conceptos aprendidos relacionados al nombre de la asignatura.
+# ⭐️Entrega 0 : Entrega preliminar del proyecto🤖️
 ---
-# 👨🏻‍💻 Ejercicios del lenguaje de programación de C ⚙️
->En esta sección se encuentran ejercicios correspondientes a los
->temas vistos en clase y los usos apropiados de cada herramienta.
+> A continuación se encuentran los pasos para ejecutar el programa
+> 1. make run
+> 2. make run_ph
+> 3. make run_temp
+----
 
-#### 💬 Temas:
-- Apuntadores ➡️ 🔲
-- Memoria Dinámica 🧠 💾
-- fork () 🔧⚙️
-- pipe () 👷‍♂️🔁
-- Concurrencia 🔀🪢
-- posix y pthreads 🧵🚀
----
-
-#### Última actualización: 04/04/2024 por Juan Pablo Cañón 🔝
