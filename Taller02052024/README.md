@@ -23,3 +23,6 @@ El código incluye los siguientes archivos:
 $ make
 $ make run
 $ make clean
+
+---
+![alt text](image.png)
