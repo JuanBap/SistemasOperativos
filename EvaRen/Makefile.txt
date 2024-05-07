@@ -1,3 +1,14 @@
+# **************************************************************
+#               Pontificia Universidad Javeriana
+#     Autor: Juan Pablo Cañón Contreras
+#     Fecha: Mayo 2024
+#     Materia: Sistemas Operativos
+#     Tema: Taller de Evaluación de Rendimiento
+#     Fichero: Makefile 
+#	  Objetivo: Facilitar la compilación y ejecución del código
+#				
+# ****************************************************************
+
 # Variables
 CC = gcc
 CFLAGS = -Wall -lpthread
