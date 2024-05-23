@@ -39,13 +39,13 @@ make_path($result_dir) unless -d $result_dir;
 my @Ejecutables = ("mm_clasico", "mm_transpuesta");
 
 # Define los tamaños de matrices para las pruebas en un arreglo
-my @Size_Matriz = ("2048");
+my @Size_Matriz = ("1024");
 
 # Define los números de hilos que se usarán en las pruebas en otro arreglo
 my @Num_Hilos = (1, 2, 4);
 
 # Establece el número de repeticiones que se realizarán para cada configuración
-my $Repeticiones = 30;
+my $Repeticiones = 10;
 
 # Ciclo anidado que itera sobre cada ejecutable, tamaño de matriz y número de hilos
 foreach my $exe (@Ejecutables) {
