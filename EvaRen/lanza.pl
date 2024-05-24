@@ -1,15 +1,6 @@
 #!/usr/bin/perl
 #**************************************************************
 #               Pontificia Universidad Javeriana
-#     Autor: J. Corredor
-#     Fecha: Febrero 2024
-#     Materia: Sistemas Operativos
-#     Tema: Taller de Evaluación de Rendimiento
-#     Fichero: script automatización ejecución por lotes 
-#****************************************************************
-
-#**************************************************************
-#               Pontificia Universidad Javeriana
 #     Autor: Juan Pablo Cañón Contreras
 #     Fecha: Mayo 2024
 #     Materia: Sistemas Operativos
