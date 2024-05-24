@@ -7,7 +7,7 @@ SENSOR = sensor
 
 # Compilar monitor
 $(MONITOR): $(MONITOR_C)
-		$(GCC) $(MONITOR_C) -o $(MONITOR)
+		$(GCC) -pthread $(MONITOR_C) -o $(MONITOR) -lrt
 
 # Compilar sensor
 $(SENSOR): $(SENSOR_C)
@@ -41,12 +41,3 @@ clean:
 
 # Reglas para compilar todo y ejecutar casos específicos
 all: $(MONITOR) $(SENSOR)
-
-
-# Siendo esto así los posibles comandos son:
-# make all
-# make run_temp
-# make run_ph
-# make run_monitor
-# make run_sensor_temp
-# make run_sensor_ph
