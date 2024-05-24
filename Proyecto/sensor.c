@@ -1,8 +1,26 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <fcntl.h>
+/**************************************************************
+#               Pontificia Universidad Javeriana
+#     Autores: Juan Pablo Cañón Contreras, Maria Paula Rodríguez Mancera, Natalia Echeverry Salcedo y Daniel Carvajal Gutiérrez
+#     Fecha: Mayo 2024
+#     Materia: Sistemas Operativos
+#     Profesor: John Corredor
+#     Tema: Proyecto de Monitoreo de Sensores
+#     Fichero: sensor.c
+#     Objetivo: Implementar los procesos simulados de sensores que
+#               recogen datos de temperatura y PH y los envían al
+#               proceso monitor a través de un pipe nominal. Este
+#               archivo contiene las funciones necesarias para simular
+#               la captura de los datos y su envío, gestionando la 
+#               sincronización y la comunicación interprocesos.
+#****************************************************************/
+
+
+// Inclusión de bibliotecas
+#include <stdio.h>      //Biblioteca estándar de entrada y salida para funciones como printf, scanf, etc
+#include <stdlib.h>     //Biblioteca estándar de utilidades generales, incluyendo manejo de memoria, números aleatorios, etc
+#include <string.h>     //Biblioteca para manejo de cadenas y operaciones de memoria
+#include <unistd.h>     //Interfaz para llamadas al sistema POSIX, que provee acceso a servicios del sistema operativo, como read, write, close
+#include <fcntl.h>      //Definiciones de control de archivos, proporcionando banderas para operaciones con archivos como open (ej. O_RDONLY, O_WRONLY)
 
 //Colores
 const char *RED = "\033[31m";

@@ -1,12 +1,30 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <pthread.h>
-#include <semaphore.h>
-#include <time.h>
-#include <sys/stat.h> //Para la función mkfifo
+/**************************************************************
+#               Pontificia Universidad Javeriana
+#     Autor: Juan Pablo Cañón Contreras, Maria Paula Rodríguez Mancera, Natalia Echeverry Salcedo y Daniel Carvajal Gutiérrez
+#     Fecha: Mayo 2024
+#     Materia: Sistemas Operativos
+#     Profesor: John Corredor
+#     Tema: Proyecto de Monitoreo de Sensores
+#     Fichero: monitor.c
+#     Objetivo: Implementar el proceso monitor que recibe los datos
+#               de los sensores de temperatura y PH a través de un
+#               pipe nominal. Este archivo gestiona los hilos para
+#               la recepción, procesamiento y almacenamiento de los
+#               datos, así como la generación de alertas basadas en
+#               los rangos establecidos para cada parámetro medido.
+#****************************************************************/
+
+//Inclusión de bibliotecas
+#include <stdio.h>      //Biblioteca estándar de entrada y salida para funciones como printf, scanf, etc
+#include <stdlib.h>     //Biblioteca estándar de utilidades generales, incluyendo manejo de memoria, números aleatorios, etc
+#include <string.h>     //Biblioteca para manejo de cadenas y operaciones de memoria
+#include <unistd.h>     //Interfaz para llamadas al sistema POSIX, como read, write, close
+#include <fcntl.h>      //Definiciones de control de archivos, como las banderas para open (ej. O_RDONLY)
+#include <pthread.h>    //Biblioteca para manejo de hilos POSIX
+#include <semaphore.h>  //Biblioteca para manejo de semáforos POSIX
+#include <time.h>       //Biblioteca para manejo de tiempo y fechas
+#include <sys/stat.h>   //Biblioteca que contiene llamadas al sistema para operaciones sobre el estado de archivos, como mkfifo
+
 
 //Definimos las banderas para temperatura y pH
 #define TEMPERATURA_FLAG "TEMP"
