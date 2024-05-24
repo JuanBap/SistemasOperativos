@@ -10,8 +10,7 @@
 # ****************************************************************
 
 # Variables
-CC = gcc
-CFLAGS = -Wall -lpthread
+GCC = gcc
 OBJ = functions.c
 TARGETS = mm_clasico mm_transpuesta
 
@@ -20,10 +19,10 @@ all: $(TARGETS)
 
 # Reglas específicas para cada ejecutable
 mm_clasico: mm_clasico.c $(OBJ)
-	$(CC) $^ -o $@ $(CFLAGS)
+	$(GCC) $^ -o $@ $(CFLAGS)
 
 mm_transpuesta: mm_transpuesta.c $(OBJ)
-	$(CC) $^ -o $@ $(CFLAGS)
+	$(GCC) $^ -o $@ $(CFLAGS)
 
 # Comandos para correr cada ejecutable
 # Ejemplo: make run_mm_clasico TAM=1024 HILOS=4
@@ -37,4 +36,3 @@ run_mm_transpuesta:
 clean:
 	rm -f $(TARGETS)
 
-.PHONY: all clean run_mm_clasico run_mm_transpuesta
