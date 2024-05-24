@@ -1,35 +1,52 @@
 # Variables para los nombres de los ejecutables y archivos fuente
-CC = gcc
-CFLAGS = -Wall
-MONITOR_SRC = monitor.c
-SENSOR_SRC = sensor.c
-MONITOR_BIN = monitor
-SENSOR_BIN = sensor
+GCC = gcc
+MONITOR_C = monitor.c
+SENSOR_C = sensor.c
+MONITOR = monitor
+SENSOR = sensor
 
 # Compilar monitor
-$(MONITOR_BIN): $(MONITOR_SRC)
-		$(CC) $(CFLAGS) $(MONITOR_SRC) -o $(MONITOR_BIN)
+$(MONITOR): $(MONITOR_C)
+		$(GCC) $(MONITOR_C) -o $(MONITOR)
 
 # Compilar sensor
-$(SENSOR_BIN): $(SENSOR_SRC)
-		$(CC) $(CFLAGS) $(SENSOR_SRC) -o $(SENSOR_BIN)
+$(SENSOR): $(SENSOR_C)
+		$(GCC) $(SENSOR_C) -o $(SENSOR)
 
 # Ejecutar monitor y sensor de temperatura
-run_temp: $(MONITOR_BIN) $(SENSOR_BIN)
-		./$(MONITOR_BIN) -b 100 -t file-temp.txt -h file-ph.txt -p pipe_nominal & \
-		sleep 1 && ./$(SENSOR_BIN) -s 1 -t 1 -f temperatura.txt -p pipe_nominal
+run_temp: $(MONITOR) $(SENSOR)
+		./$(MONITOR) -b 100 -t file-temp.txt -h file-ph.txt -p pipe_nominal & \
+		sleep 1 && ./$(SENSOR) -s 1 -t 1 -f temperatura.txt -p pipe_nominal
 
 # Ejecutar monitor y sensor de pH
-run_ph: $(MONITOR_BIN) $(SENSOR_BIN)
-		./$(MONITOR_BIN) -b 100 -t file-temp.txt -h file-ph.txt -p pipe_nominal & \
-		sleep 1 && ./$(SENSOR_BIN) -s 2 -t 1 -f phdata.txt -p pipe_nominal
+run_ph: $(MONITOR) $(SENSOR)
+		./$(MONITOR) -b 100 -t file-temp.txt -h file-ph.txt -p pipe_nominal & \
+		sleep 1 && ./$(SENSOR) -s 2 -t 1 -f phdata.txt -p pipe_nominal
+
+# Ejecutar solo el monitor
+run_monitor: $(MONITOR)
+		./$(MONITOR) -b 100 -t file-temp.txt -h file-ph.txt -p pipe_nominal
+
+# Ejecutar solo el sensor de temperatura
+run_sensor_temp: $(SENSOR)
+		./$(SENSOR) -s 1 -t 1 -f temperatura.txt -p pipe_nominal
+
+# Ejecutar solo el sensor de pH
+run_sensor_ph: $(SENSOR)
+		./$(SENSOR) -s 2 -t 1 -f phdata.txt -p pipe_nominal
 
 # Limpiar archivos generados
 clean:
-		rm -f $(MONITOR_BIN) $(SENSOR_BIN) file-temp.txt file-ph.txt temperatura.txt phdata.txt
+		rm -f $(MONITOR) $(SENSOR) file-temp.txt file-ph.txt pipe_nominal
 
 # Reglas para compilar todo y ejecutar casos específicos
-all: $(MONITOR_BIN) $(SENSOR_BIN)
+all: $(MONITOR) $(SENSOR)
 
-# Definir una regla por defecto para evitar compilaciones innecesarias
-.PHONY: clean all run_temp run_ph
+
+# Siendo esto así los posibles comandos son:
+# make all
+# make run_temp
+# make run_ph
+# make run_monitor
+# make run_sensor_temp
+# make run_sensor_ph
