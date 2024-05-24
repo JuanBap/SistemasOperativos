@@ -67,7 +67,6 @@ Calcule el promedio de los tiempos de ejecución y la desviación estándar para
 Los experimentos se llevaron a cabo en tres diferentes entornos de cómputo:
 
 > Workspaces Pro: Un entorno de desarrollo proporcionado por GitHub, optimizado para desarrollo y pruebas de software en contenedores.
-
 > Replit: Una plataforma en línea que facilita el desarrollo y ejecución de código, especialmente útil para pruebas rápidas y despliegue.
 > CoCalc: Un entorno de computación en la nube robusto y flexible, ideal para tareas de alta carga computacional y experimentación automatizada.
 
@@ -96,7 +95,7 @@ Por qué: Es importante evaluar cómo los algoritmos gestionan los recursos de m
 Cómo: Se monitorea el uso de memoria durante la ejecución de los algoritmos utilizando herramientas del sistema como top y free.
 Cuándo y Dónde: Durante cada ejecución de los experimentos en los entornos Workspaces Pro, Replit, y CoCalc.
 
-#Contacto
+# Contacto
 Para cualquier pregunta o sugerencia, por favor contacte a:
 
 Autor: Juan Pablo Cañón Contreras
